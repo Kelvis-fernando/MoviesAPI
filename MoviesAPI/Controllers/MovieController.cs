@@ -12,19 +12,29 @@ namespace MoviesAPI.Controllers
         public static int id = 1;
 
         [HttpPost]
-        public void AddMovie([FromBody] Movie movie)
+        public IActionResult AddMovie([FromBody] Movie movie)
         {
             movie.Id = id++;
             movies.Add(movie);
+
+            return CreatedAtAction(nameof(GetMovieById), new { Id = movie.Id }, movie);
         }
 
         [HttpGet]
-        public IEnumerable<Movie> GetMovies()
+        public IActionResult GetMovies()
         {
-            return movies;
+            return Ok(movies);
         }
 
         [HttpGet("{id}")]
-        public Movie GetMovieById(int id) => movies.FirstOrDefault(movie => movie.Id == id);
+        public IActionResult GetMovieById(int id)
+        {
+            Movie movie = movies.FirstOrDefault(movie => movie.Id == id);
+            if (movie != null)
+            {
+                return Ok(movie);
+            }
+            return NotFound();
+        }
     }
 }
