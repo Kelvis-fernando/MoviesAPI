@@ -9,8 +9,8 @@ using MoviesAPI.Context;
 
 namespace MoviesAPI.Migrations
 {
-    [DbContext(typeof(APIDbContext))]
-    [Migration("20230316204910_CreateTableMovie")]
+    [DbContext(typeof(MovieDbContext))]
+    [Migration("20230316210532_CreateTableMovie")]
     partial class CreateTableMovie
     {
         /// <inheritdoc />

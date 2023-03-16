@@ -3,10 +3,10 @@ using MoviesAPI.Models;
 
 namespace MoviesAPI.Context
 {
-    public class APIDbContext : DbContext
+    public class MovieDbContext : DbContext
     {
 
-        public APIDbContext(DbContextOptions<APIDbContext> options) : base(options) { }
+        public MovieDbContext(DbContextOptions<MovieDbContext> options) : base(options) { }
 
         public DbSet<Movie> Movies { get; set; }
 

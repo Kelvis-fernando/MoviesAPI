@@ -5,7 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 var connectionStringMySql = builder.Configuration.GetConnectionString("MovieConnection");
-builder.Services.AddDbContext<APIDbContext>(options => options.UseMySql(
+builder.Services.AddDbContext<MovieDbContext>(options => options.UseMySql(
     connectionStringMySql,
     ServerVersion.Parse("10.4.22-MariaDB")
     ));

@@ -8,8 +8,8 @@ using MoviesAPI.Context;
 
 namespace MoviesAPI.Migrations
 {
-    [DbContext(typeof(APIDbContext))]
-    partial class APIDbContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(MovieDbContext))]
+    partial class MovieDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
